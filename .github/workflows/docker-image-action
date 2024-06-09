@@ -1,0 +1,42 @@
+name: Docker Image CI
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - Dockerfile
+      - docker-latest-requirements.txt
+      - .github/workflows/docker-image-action.yml
+  pull_request:
+    branches:
+      - main
+      - bwuni-cluster
+    paths:
+      - Dockerfile
+      - docker-requirements.txt
+      - .github/workflows/docker-image-action.yml
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Cleanup before build
+        run: docker system prune -af
+
+      - uses: actions/checkout@v3
+      - name: Build the Docker image
+        run: docker build . --file Dockerfile --tag jrupprec/hubila
+
+      - name: Log in to Docker Hub
+        uses: docker/login-action@v1
+        with:
+          username: ${{ secrets.DOCKER_HUB_USERNAME }}
+          password: ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}
+
+      - name: Push image to Docker Hub
+        run: docker push jrupprec/hubila
+
+      - name: Cleanup after build
+        run: docker system prune -af
