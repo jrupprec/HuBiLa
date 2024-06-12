@@ -162,3 +162,4 @@ cython_debug/
 .vscode/
 local-llm/
 models/
+WVS_Cross-National_Wave_7_csv_v6_0.csv
