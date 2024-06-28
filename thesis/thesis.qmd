@@ -1,0 +1,20 @@
+---
+title: "HuBiLa: Human Biases in Large Language Models"
+subtitle: "Investigating Response and Prompt Perturbation Biases in LLMs: A Survey Design Perspective"
+author: "Jens Rupprecht"
+date: today
+format: 
+    pdf: default
+    
+---
+
+## This is my thesis
+This is some content
+
+```{python}
+# this is some code
+x = 5 + 1
+print(f"The result is {x}")
+```
+
+The result is `{python} x`
