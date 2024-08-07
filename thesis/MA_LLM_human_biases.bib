@@ -1,0 +1,358 @@
+
+@misc{rottger_political_2024,
+	title = {Political {Compass} or {Spinning} {Arrow}? {Towards} {More} {Meaningful} {Evaluations} for {Values} and {Opinions} in {Large} {Language} {Models}},
+	shorttitle = {Political {Compass} or {Spinning} {Arrow}?},
+	url = {http://arxiv.org/abs/2402.16786},
+	doi = {10.48550/arXiv.2402.16786},
+	abstract = {Much recent work seeks to evaluate values and opinions in large language models (LLMs) using multiple-choice surveys and questionnaires. Most of this work is motivated by concerns around real-world LLM applications. For example, politically-biased LLMs may subtly influence society when they are used by millions of people. Such real-world concerns, however, stand in stark contrast to the artificiality of current evaluations: real users do not typically ask LLMs survey questions. Motivated by this discrepancy, we challenge the prevailing constrained evaluation paradigm for values and opinions in LLMs and explore more realistic unconstrained evaluations. As a case study, we focus on the popular Political Compass Test (PCT). In a systematic review, we find that most prior work using the PCT forces models to comply with the PCT's multiple-choice format. We show that models give substantively different answers when not forced; that answers change depending on how models are forced; and that answers lack paraphrase robustness. Then, we demonstrate that models give different answers yet again in a more realistic open-ended answer setting. We distill these findings into recommendations and open challenges in evaluating values and opinions in LLMs.},
+	urldate = {2024-05-16},
+	publisher = {arXiv},
+	author = {Röttger, Paul and Hofmann, Valentin and Pyatkin, Valentina and Hinck, Musashi and Kirk, Hannah Rose and Schütze, Hinrich and Hovy, Dirk},
+	month = feb,
+	year = {2024},
+	note = {arXiv:2402.16786 [cs]},
+	keywords = {Computer Science - Artificial Intelligence, Computer Science - Computation and Language},
+	annote = {Röttger et al. 2024: „Political Compass or Spinning Arrow?“
+
+
+Motivation: „politically-biased LLMs may subtly influence society when they are used by millions of people“ (Röttger et al., 2024, p. 1)
+
+
+Objective: explore more realistic unconstrained evaluations
+
+
+prior work forced models to comply with PCT MCQ format
+
+
+
+
+
+Result: „models give substantively different answers when not forced; that answers change depending on how models are forced; and that answers lack paraphrase robustness“ (Röttger et al., 2024, p. 1)
+
+
+„we find that no prior work conclusively establishes prompt robustness“ (Röttger et al., 2024, p. 3)
+
+
+„first two experiments test the impact of this constraint, by removing (§4.2) and varying (§4.3) the forced choice prompt. Since prior work has not conclusively established the robustness of PCT results to minor changes in input prompts, we also conduct a paraphrase robustness experiment“ (Röttger et al., 2024, p. 3)
+
+
+},
+	file = {arXiv Fulltext PDF:C\:\\Users\\ruppr\\Zotero\\storage\\F9SNXS9C\\Röttger et al. - 2024 - Political Compass or Spinning Arrow Towards More .pdf:application/pdf;arXiv.org Snapshot:C\:\\Users\\ruppr\\Zotero\\storage\\P44AUQBU\\2402.html:text/html},
+}
+
+@misc{wang_my_2024,
+	title = {"{My} {Answer} is {C}": {First}-{Token} {Probabilities} {Do} {Not} {Match} {Text} {Answers} in {Instruction}-{Tuned} {Language} {Models}},
+	shorttitle = {"{My} {Answer} is {C}"},
+	url = {http://arxiv.org/abs/2402.14499},
+	doi = {10.48550/arXiv.2402.14499},
+	abstract = {The open-ended nature of language generation makes the evaluation of autoregressive large language models (LLMs) challenging. One common evaluation approach uses multiple-choice questions (MCQ) to limit the response space. The model is then evaluated by ranking the candidate answers by the log probability of the first token prediction. However, first-tokens may not consistently reflect the final response output, due to model's diverse response styles such as starting with "Sure" or refusing to answer. Consequently, MCQ evaluation is not indicative of model behaviour when interacting with users. But by how much? We evaluate how aligned first-token evaluation is with the text output along several dimensions, namely final option choice, refusal rate, choice distribution and robustness under prompt perturbation. Our results show that the two approaches are severely misaligned on all dimensions, reaching mismatch rates over 60\%. Models heavily fine-tuned on conversational or safety data are especially impacted. Crucially, models remain misaligned even when we increasingly constrain prompts, i.e., force them to start with an option letter or example template. Our findings i) underscore the importance of inspecting the text output, too and ii) caution against relying solely on first-token evaluation.},
+	urldate = {2024-05-16},
+	publisher = {arXiv},
+	author = {Wang, Xinpeng and Ma, Bolei and Hu, Chengzhi and Weber-Genzel, Leon and Röttger, Paul and Kreuter, Frauke and Hovy, Dirk and Plank, Barbara},
+	month = feb,
+	year = {2024},
+	note = {arXiv:2402.14499 [cs]},
+	keywords = {Computer Science - Computation and Language},
+	annote = {Wang et al. 2024: My Answer is C
+
+
+evaluate the first token responses and their reliability
+
+
+Method: MCQ and log probability of first token prediction
+
+
+OpinionQA to format Pew Research Survey into prompt format
+
+
+Prompt format: each question consists of: General Instruction (differing constraint levels), Question and Answer Options
+
+
+Consistency/Robustness: each question represented 10 times with answer options shuffled in different order
+
+
+
+
+Evaluation of how first-token evaluation is aligned with text output along
+
+
+final option choice
+
+
+refusal rate
+
+
+choice distribution
+
+
+robustness under prompt perturbations
+
+
+
+
+First Token Evaluation:
+
+
+commonly used in MCQ setting
+
+
+„involves calculating the log probabilities for specific answer option“ (Wang et al., 2024, p. 2)
+
+
+
+
+Text Output Evaluation:
+
+
+Classifier to categorize text output into one answer option
+
+
+trained a „Mistral-7b-v0.2“ to classify
+
+
+
+
+Results: mismatch rate of over 60\%
+
+
+esp. fine-tuned models
+
+
+even with constraint prompting
+
+
+Mismatch: „measure the proportion of cases where the answer chosen by the first-token evaluation differs from the choice made in the text output“ (Wang et al., 2024, p. 3)
+
+
+generally mismatch level decreases when constraint level rises from low to high
+
+
+
+
+Implication:
+
+
+importance of inspecting text output
+
+
+against relying solely on first-token evaluation
+
+
+„suggests that the few-shot templates used in objective tasks are not suitable for subjective tasks since there are no “correct” examples.“ (Wang et al., 2024, p. 4)
+
+
+„the model’s refusal behaviour when evaluating its response to questions related to sensitive topics,“ (Wang et al., 2024, p. 4)
+
+
+
+
+Prior work:
+
+
+Selection Bias: „when asking MCQs, such as preferring the option ‘A’ (A-bias) and being influenced by the option orde“ (Wang et al., 2024, p. 2)
+
+
+
+
+
+
+
+},
+	file = {arXiv Fulltext PDF:C\:\\Users\\ruppr\\Zotero\\storage\\8TSALK98\\Wang et al. - 2024 - My Answer is C First-Token Probabilities Do Not.pdf:application/pdf;arXiv.org Snapshot:C\:\\Users\\ruppr\\Zotero\\storage\\GX8Z8P5V\\2402.html:text/html},
+}
+
+@misc{sclar_quantifying_2023,
+	title = {Quantifying {Language} {Models}' {Sensitivity} to {Spurious} {Features} in {Prompt} {Design} or: {How} {I} learned to start worrying about prompt formatting},
+	shorttitle = {Quantifying {Language} {Models}' {Sensitivity} to {Spurious} {Features} in {Prompt} {Design} or},
+	url = {http://arxiv.org/abs/2310.11324},
+	doi = {10.48550/arXiv.2310.11324},
+	abstract = {As large language models (LLMs) are adopted as a fundamental component of language technologies, it is crucial to accurately characterize their performance. Because choices in prompt design can strongly influence model behavior, this design process is critical in effectively using any modern pre-trained generative language model. In this work, we focus on LLM sensitivity to a quintessential class of meaning-preserving design choices: prompt formatting. We find that several widely used open-source LLMs are extremely sensitive to subtle changes in prompt formatting in few-shot settings, with performance differences of up to 76 accuracy points when evaluated using LLaMA-2-13B. Sensitivity remains even when increasing model size, the number of few-shot examples, or performing instruction tuning. Our analysis suggests that work evaluating LLMs with prompting-based methods would benefit from reporting a range of performance across plausible prompt formats, instead of the currently-standard practice of reporting performance on a single format. We also show that format performance only weakly correlates between models, which puts into question the methodological validity of comparing models with an arbitrarily chosen, fixed prompt format. To facilitate systematic analysis we propose FormatSpread, an algorithm that rapidly evaluates a sampled set of plausible prompt formats for a given task, and reports the interval of expected performance without accessing model weights. Furthermore, we present a suite of analyses that characterize the nature of this sensitivity, including exploring the influence of particular atomic perturbations and the internal representation of particular formats.},
+	urldate = {2024-05-16},
+	publisher = {arXiv},
+	author = {Sclar, Melanie and Choi, Yejin and Tsvetkov, Yulia and Suhr, Alane},
+	month = oct,
+	year = {2023},
+	note = {arXiv:2310.11324 [cs]},
+	keywords = {Computer Science - Artificial Intelligence, Computer Science - Computation and Language, Computer Science - Machine Learning},
+	file = {arXiv Fulltext PDF:C\:\\Users\\ruppr\\Zotero\\storage\\MRN44PJD\\Sclar et al. - 2023 - Quantifying Language Models' Sensitivity to Spurio.pdf:application/pdf;arXiv.org Snapshot:C\:\\Users\\ruppr\\Zotero\\storage\\7J68WH63\\2310.html:text/html},
+}
+
+@misc{hartmann_political_2023,
+	title = {The political ideology of conversational {AI}: {Converging} evidence on {ChatGPT}'s pro-environmental, left-libertarian orientation},
+	shorttitle = {The political ideology of conversational {AI}},
+	url = {http://arxiv.org/abs/2301.01768},
+	doi = {10.48550/arXiv.2301.01768},
+	abstract = {Conversational artificial intelligence (AI) disrupts how humans interact with technology. Recently, OpenAI introduced ChatGPT, a state-of-the-art dialogue model that can converse with its human counterparts with unprecedented capabilities. ChatGPT has witnessed tremendous attention from the media, academia, industry, and the general public, attracting more than a million users within days of its release. However, its explosive adoption for information search and as an automated decision aid underscores the importance to understand its limitations and biases. This paper focuses on one of democratic society's most important decision-making processes: political elections. Prompting ChatGPT with 630 political statements from two leading voting advice applications and the nation-agnostic political compass test in three pre-registered experiments, we uncover ChatGPT's pro-environmental, left-libertarian ideology. For example, ChatGPT would impose taxes on flights, restrict rent increases, and legalize abortion. In the 2021 elections, it would have voted most likely for the Greens both in Germany (B{\textbackslash}"undnis 90/Die Gr{\textbackslash}"unen) and in the Netherlands (GroenLinks). Our findings are robust when negating the prompts, reversing the order of the statements, varying prompt formality, and across languages (English, German, Dutch, and Spanish). We conclude by discussing the implications of politically biased conversational AI on society.},
+	urldate = {2024-05-20},
+	publisher = {arXiv},
+	author = {Hartmann, Jochen and Schwenzow, Jasper and Witte, Maximilian},
+	month = jan,
+	year = {2023},
+	note = {arXiv:2301.01768 [cs]},
+	keywords = {Computer Science - Computation and Language, Computer Science - Computers and Society},
+	file = {arXiv Fulltext PDF:C\:\\Users\\ruppr\\Zotero\\storage\\KPY6FC36\\Hartmann et al. - 2023 - The political ideology of conversational AI Conve.pdf:application/pdf;arXiv.org Snapshot:C\:\\Users\\ruppr\\Zotero\\storage\\QKQTVUPW\\2301.html:text/html},
+}
+
+@misc{durmus_towards_2024,
+	title = {Towards {Measuring} the {Representation} of {Subjective} {Global} {Opinions} in {Language} {Models}},
+	url = {http://arxiv.org/abs/2306.16388},
+	doi = {10.48550/arXiv.2306.16388},
+	abstract = {Large language models (LLMs) may not equitably represent diverse global perspectives on societal issues. In this paper, we develop a quantitative framework to evaluate whose opinions model-generated responses are more similar to. We first build a dataset, GlobalOpinionQA, comprised of questions and answers from cross-national surveys designed to capture diverse opinions on global issues across different countries. Next, we define a metric that quantifies the similarity between LLM-generated survey responses and human responses, conditioned on country. With our framework, we run three experiments on an LLM trained to be helpful, honest, and harmless with Constitutional AI. By default, LLM responses tend to be more similar to the opinions of certain populations, such as those from the USA, and some European and South American countries, highlighting the potential for biases. When we prompt the model to consider a particular country's perspective, responses shift to be more similar to the opinions of the prompted populations, but can reflect harmful cultural stereotypes. When we translate GlobalOpinionQA questions to a target language, the model's responses do not necessarily become the most similar to the opinions of speakers of those languages. We release our dataset for others to use and build on. Our data is at https://huggingface.co/datasets/Anthropic/llm\_global\_opinions. We also provide an interactive visualization at https://llmglobalvalues.anthropic.com.},
+	urldate = {2024-05-20},
+	publisher = {arXiv},
+	author = {Durmus, Esin and Nguyen, Karina and Liao, Thomas I. and Schiefer, Nicholas and Askell, Amanda and Bakhtin, Anton and Chen, Carol and Hatfield-Dodds, Zac and Hernandez, Danny and Joseph, Nicholas and Lovitt, Liane and McCandlish, Sam and Sikder, Orowa and Tamkin, Alex and Thamkul, Janel and Kaplan, Jared and Clark, Jack and Ganguli, Deep},
+	month = apr,
+	year = {2024},
+	note = {arXiv:2306.16388 [cs]},
+	keywords = {Computer Science - Artificial Intelligence, Computer Science - Computation and Language},
+	file = {arXiv Fulltext PDF:C\:\\Users\\ruppr\\Zotero\\storage\\ABBUWVLG\\Durmus et al. - 2024 - Towards Measuring the Representation of Subjective.pdf:application/pdf;arXiv.org Snapshot:C\:\\Users\\ruppr\\Zotero\\storage\\YM492KNC\\2306.html:text/html},
+}
+
+@misc{rottger_xstest_2024,
+	title = {{XSTest}: {A} {Test} {Suite} for {Identifying} {Exaggerated} {Safety} {Behaviours} in {Large} {Language} {Models}},
+	shorttitle = {{XSTest}},
+	url = {http://arxiv.org/abs/2308.01263},
+	doi = {10.48550/arXiv.2308.01263},
+	abstract = {Without proper safeguards, large language models will readily follow malicious instructions and generate toxic content. This risk motivates safety efforts such as red-teaming and large-scale feedback learning, which aim to make models both helpful and harmless. However, there is a tension between these two objectives, since harmlessness requires models to refuse to comply with unsafe prompts, and thus not be helpful. Recent anecdotal evidence suggests that some models may have struck a poor balance, so that even clearly safe prompts are refused if they use similar language to unsafe prompts or mention sensitive topics. In this paper, we introduce a new test suite called XSTest to identify such eXaggerated Safety behaviours in a systematic way. XSTest comprises 250 safe prompts across ten prompt types that well-calibrated models should not refuse to comply with, and 200 unsafe prompts as contrasts that models, for most applications, should refuse. We describe XSTest's creation and composition, and then use the test suite to highlight systematic failure modes in state-of-the-art language models as well as more general challenges in building safer language models.},
+	urldate = {2024-05-21},
+	publisher = {arXiv},
+	author = {Röttger, Paul and Kirk, Hannah Rose and Vidgen, Bertie and Attanasio, Giuseppe and Bianchi, Federico and Hovy, Dirk},
+	month = apr,
+	year = {2024},
+	note = {arXiv:2308.01263 [cs]},
+	keywords = {Computer Science - Artificial Intelligence, Computer Science - Computation and Language},
+	annote = {Comment: Accepted at NAACL 2024 (Main Conference)},
+	file = {arXiv Fulltext PDF:C\:\\Users\\ruppr\\Zotero\\storage\\SVYSAC29\\Röttger et al. - 2024 - XSTest A Test Suite for Identifying Exaggerated S.pdf:application/pdf;arXiv.org Snapshot:C\:\\Users\\ruppr\\Zotero\\storage\\CWVC6HUB\\2308.html:text/html},
+}
+
+@misc{qiang_prompt_2024,
+	title = {Prompt {Perturbation} {Consistency} {Learning} for {Robust} {Language} {Models}},
+	url = {http://arxiv.org/abs/2402.15833},
+	doi = {10.48550/arXiv.2402.15833},
+	abstract = {Large language models (LLMs) have demonstrated impressive performance on a number of natural language processing tasks, such as question answering and text summarization. However, their performance on sequence labeling tasks such as intent classification and slot filling (IC-SF), which is a central component in personal assistant systems, lags significantly behind discriminative models. Furthermore, there is a lack of substantive research on the robustness of LLMs to various perturbations in the input prompts. The contributions of this paper are three-fold. First, we show that fine-tuning sufficiently large LLMs can produce IC-SF performance comparable to discriminative models. Next, we systematically analyze the performance deterioration of those fine-tuned models due to three distinct yet relevant types of input perturbations - oronyms, synonyms, and paraphrasing. Finally, we propose an efficient mitigation approach, Prompt Perturbation Consistency Learning (PPCL), which works by regularizing the divergence between losses from clean and perturbed samples. Our experiments demonstrate that PPCL can recover on average 59\% and 69\% of the performance drop for IC and SF tasks, respectively. Furthermore, PPCL beats the data augmentation approach while using ten times fewer augmented data samples.},
+	urldate = {2024-05-22},
+	publisher = {arXiv},
+	author = {Qiang, Yao and Nandi, Subhrangshu and Mehrabi, Ninareh and Steeg, Greg Ver and Kumar, Anoop and Rumshisky, Anna and Galstyan, Aram},
+	month = feb,
+	year = {2024},
+	note = {arXiv:2402.15833 [cs]},
+	keywords = {Computer Science - Computation and Language, Computer Science - Machine Learning},
+	annote = {„Prompt Perturbation Consistency Learning for Robust Language Models“ (Qiang et al., 2024, p. 1)
+„propose an efficient mitigation approach, prompt perturbation consistency learning (PPCL), which works by regularizing the divergence between losses from clean and perturbed samples.“ (Qiang et al., 2024, p. 1)
+„generate new instances by manipulating a few words in the original text (Feng et al., 2021; Chen et al., 2023). Some common techniques include word replacement, random deletion, and word position swap (Wei and Zou, 2019). Additionally, data augmentation in NLP can involve creating entirely artificial examples using back-translation (Sennrich et al., 2015)“ (Qiang et al., 2024, p. 2)
+„LLMs exhibit vulnerability to perturbations (Zhuo et al., 2023; Zhu et al., 2023), leading to the generation of incorrect responses“ (Qiang et al., 2024, p. 3)
+Definition of a robust model. „A robust model aims to convert all utterances with or without meaning-preserving perturbations into correct hypotheses“ (Qiang et al., 2024, p. 4)
+Perturbations
+„Oronym perturbation involves making changes to a text by replacing words or phrases with those that are phonetically similar but carry a different meaning. Oronym perturbation is widely used for data augmentation in NLP tasks, especially for tasks that require robustness to speech recognition errors (ASR) or homophonic ambiguity“ (Qiang et al., 2024, p. 4)
+„Synonym perturbation replaces certain words or phrases with their synonyms while preserving the overall meaning of the text. It is commonly employed in NLP as data augmentation to enhance data diversity by generating new variations of a given sentence while retaining semantic coherence (Alfonso-Hermelo et al., 2021)“ (Qiang et al., 2024, p. 4)
+„Paraphrasing perturbation entails rephrasing a given text to create variations while preserving its original meaning. This is highly consistent with our daily communications that present the same meaning in different ways.“ (Qiang et al., 2024, p. 4)
+Results
+„Results show that discriminative models, ICL approaches, and LLMs with instruction finetuning are vulnerable to these perturbations with large performance drops, most notably, in SF tasks with oronym perturbations“ (Qiang et al., 2024, p. 7)
+},
+	file = {arXiv Fulltext PDF:C\:\\Users\\ruppr\\Zotero\\storage\\5SK52CXT\\Qiang et al. - 2024 - Prompt Perturbation Consistency Learning for Robus.pdf:application/pdf;arXiv.org Snapshot:C\:\\Users\\ruppr\\Zotero\\storage\\6NRXJTX9\\2402.html:text/html},
+}
+
+@misc{wei_eda_2019,
+	title = {{EDA}: {Easy} {Data} {Augmentation} {Techniques} for {Boosting} {Performance} on {Text} {Classification} {Tasks}},
+	shorttitle = {{EDA}},
+	url = {http://arxiv.org/abs/1901.11196},
+	doi = {10.48550/arXiv.1901.11196},
+	abstract = {We present EDA: easy data augmentation techniques for boosting performance on text classification tasks. EDA consists of four simple but powerful operations: synonym replacement, random insertion, random swap, and random deletion. On five text classification tasks, we show that EDA improves performance for both convolutional and recurrent neural networks. EDA demonstrates particularly strong results for smaller datasets; on average, across five datasets, training with EDA while using only 50\% of the available training set achieved the same accuracy as normal training with all available data. We also performed extensive ablation studies and suggest parameters for practical use.},
+	urldate = {2024-05-22},
+	publisher = {arXiv},
+	author = {Wei, Jason and Zou, Kai},
+	month = aug,
+	year = {2019},
+	note = {arXiv:1901.11196 [cs]},
+	keywords = {Computer Science - Computation and Language},
+	annote = {Comment: EMNLP-IJCNLP 2019 short paper},
+	annote = {„EDA: Easy Data Augmentation Techniques for Boosting Performance on Text Classification Tasks“ (Wei und Zou, 2019, p. 1)
+„EDA consists of four simple but powerful operations: synonym replacement, random insertion, random swap, and random deletion.“ (Wei und Zou, 2019, p. 1)
+„EDA demonstrates particularly strong results for smaller datasets; on average, across five datasets, training with EDA while using only 50\% of the available training set achieved the same accuracy as normal training with all available data.“ (Wei und Zou, 2019, p. 1)
+},
+	file = {arXiv Fulltext PDF:C\:\\Users\\ruppr\\Zotero\\storage\\9G24XWMP\\Wei und Zou - 2019 - EDA Easy Data Augmentation Techniques for Boostin.pdf:application/pdf;arXiv.org Snapshot:C\:\\Users\\ruppr\\Zotero\\storage\\FBINVR2R\\1901.html:text/html},
+}
+
+@misc{zhu_promptbench_2023,
+	title = {{PromptBench}: {Towards} {Evaluating} the {Robustness} of {Large} {Language} {Models} on {Adversarial} {Prompts}},
+	shorttitle = {{PromptBench}},
+	url = {http://arxiv.org/abs/2306.04528},
+	doi = {10.48550/arXiv.2306.04528},
+	abstract = {The increasing reliance on Large Language Models (LLMs) across academia and industry necessitates a comprehensive understanding of their robustness to prompts. In response to this vital need, we introduce PromptBench, a robustness benchmark designed to measure LLMs' resilience to adversarial prompts. This study uses a plethora of adversarial textual attacks targeting prompts across multiple levels: character, word, sentence, and semantic. The adversarial prompts, crafted to mimic plausible user errors like typos or synonyms, aim to evaluate how slight deviations can affect LLM outcomes while maintaining semantic integrity. These prompts are then employed in diverse tasks, such as sentiment analysis, natural language inference, reading comprehension, machine translation, and math problem-solving. Our study generates 4788 adversarial prompts, meticulously evaluated over 8 tasks and 13 datasets. Our findings demonstrate that contemporary LLMs are not robust to adversarial prompts. Furthermore, we present comprehensive analysis to understand the mystery behind prompt robustness and its transferability. We then offer insightful robustness analysis and pragmatic recommendations for prompt composition, beneficial to both researchers and everyday users. Code is available at: https://github.com/microsoft/promptbench.},
+	urldate = {2024-05-22},
+	publisher = {arXiv},
+	author = {Zhu, Kaijie and Wang, Jindong and Zhou, Jiaheng and Wang, Zichen and Chen, Hao and Wang, Yidong and Yang, Linyi and Ye, Wei and Zhang, Yue and Gong, Neil Zhenqiang and Xie, Xing},
+	month = oct,
+	year = {2023},
+	note = {arXiv:2306.04528 [cs]},
+	keywords = {Computer Science - Computation and Language, Computer Science - Machine Learning, Computer Science - Cryptography and Security},
+	annote = {Comment: Technical report; code is at: https://github.com/microsoft/promptbench},
+	file = {arXiv Fulltext PDF:C\:\\Users\\ruppr\\Zotero\\storage\\ALMQZWVP\\Zhu et al. - 2023 - PromptBench Towards Evaluating the Robustness of .pdf:application/pdf;arXiv.org Snapshot:C\:\\Users\\ruppr\\Zotero\\storage\\26LG9QBV\\2306.html:text/html},
+}
+
+@misc{zhuo_robustness_2023,
+	title = {On {Robustness} of {Prompt}-based {Semantic} {Parsing} with {Large} {Pre}-trained {Language} {Model}: {An} {Empirical} {Study} on {Codex}},
+	shorttitle = {On {Robustness} of {Prompt}-based {Semantic} {Parsing} with {Large} {Pre}-trained {Language} {Model}},
+	url = {http://arxiv.org/abs/2301.12868},
+	doi = {10.48550/arXiv.2301.12868},
+	abstract = {Semantic parsing is a technique aimed at constructing a structured representation of the meaning of a natural-language question. Recent advancements in few-shot language models trained on code have demonstrated superior performance in generating these representations compared to traditional unimodal language models, which are trained on downstream tasks. Despite these advancements, existing fine-tuned neural semantic parsers are susceptible to adversarial attacks on natural-language inputs. While it has been established that the robustness of smaller semantic parsers can be enhanced through adversarial training, this approach is not feasible for large language models in real-world scenarios, as it requires both substantial computational resources and expensive human annotation on in-domain semantic parsing data. This paper presents the first empirical study on the adversarial robustness of a large prompt-based language model of code, {\textbackslash}codex. Our results demonstrate that the state-of-the-art (SOTA) code-language models are vulnerable to carefully crafted adversarial examples. To address this challenge, we propose methods for improving robustness without the need for significant amounts of labeled data or heavy computational resources.},
+	urldate = {2024-05-22},
+	publisher = {arXiv},
+	author = {Zhuo, Terry Yue and Li, Zhuang and Huang, Yujin and Shiri, Fatemeh and Wang, Weiqing and Haffari, Gholamreza and Li, Yuan-Fang},
+	month = mar,
+	year = {2023},
+	note = {arXiv:2301.12868 [cs]},
+	keywords = {Computer Science - Computation and Language},
+	annote = {Comment: Accepted at EACL2023 (main)},
+	file = {arXiv Fulltext PDF:C\:\\Users\\ruppr\\Zotero\\storage\\HAMMT86Z\\Zhuo et al. - 2023 - On Robustness of Prompt-based Semantic Parsing wit.pdf:application/pdf;arXiv.org Snapshot:C\:\\Users\\ruppr\\Zotero\\storage\\WB87RTBH\\2301.html:text/html},
+}
+
+@misc{hu_prompt_2024,
+	title = {Prompt {Perturbation} in {Retrieval}-{Augmented} {Generation} based {Large} {Language} {Models}},
+	url = {http://arxiv.org/abs/2402.07179},
+	doi = {10.48550/arXiv.2402.07179},
+	abstract = {The robustness of large language models (LLMs) becomes increasingly important as their use rapidly grows in a wide range of domains. Retrieval-Augmented Generation (RAG) is considered as a means to improve the trustworthiness of text generation from LLMs. However, how the outputs from RAG-based LLMs are affected by slightly different inputs is not well studied. In this work, we find that the insertion of even a short prefix to the prompt leads to the generation of outputs far away from factually correct answers. We systematically evaluate the effect of such prefixes on RAG by introducing a novel optimization technique called Gradient Guided Prompt Perturbation (GGPP). GGPP achieves a high success rate in steering outputs of RAG-based LLMs to targeted wrong answers. It can also cope with instructions in the prompts requesting to ignore irrelevant context. We also exploit LLMs' neuron activation difference between prompts with and without GGPP perturbations to give a method that improves the robustness of RAG-based LLMs through a highly effective detector trained on neuron activation triggered by GGPP generated prompts. Our evaluation on open-sourced LLMs demonstrates the effectiveness of our methods.},
+	urldate = {2024-05-22},
+	publisher = {arXiv},
+	author = {Hu, Zhibo and Wang, Chen and Shu, Yanfeng and Helen and Paik and Zhu, Liming},
+	month = feb,
+	year = {2024},
+	note = {arXiv:2402.07179 [cs]},
+	keywords = {Computer Science - Computation and Language, Computer Science - Information Retrieval, H.3.3, I.2.7},
+	annote = {Comment: 12 pages, 9 figures},
+	file = {arXiv Fulltext PDF:C\:\\Users\\ruppr\\Zotero\\storage\\QBT83QEM\\Hu et al. - 2024 - Prompt Perturbation in Retrieval-Augmented Generat.pdf:application/pdf;arXiv.org Snapshot:C\:\\Users\\ruppr\\Zotero\\storage\\X5G8MXFX\\2402.html:text/html},
+}
+
+@inproceedings{dong_revisit_2023,
+	address = {Cham},
+	title = {Revisit {Input} {Perturbation} {Problems} for {LLMs}: {A} {Unified} {Robustness} {Evaluation} {Framework} for {Noisy} {Slot} {Filling} {Task}},
+	isbn = {978-3-031-44693-1},
+	shorttitle = {Revisit {Input} {Perturbation} {Problems} for {LLMs}},
+	doi = {10.1007/978-3-031-44693-1_53},
+	abstract = {With the increasing capabilities of large language models (LLMs), these high-performance models have achieved state-of-the-art results on a wide range of natural language processing (NLP) tasks. However, the models’ performance on commonly-used benchmark datasets often fails to accurately reflect their reliability and robustness when applied to real-world noisy data. To address these challenges, we propose a unified robustness evaluation framework based on the slot-filling task to systematically evaluate the dialogue understanding capability of LLMs in diverse input perturbation scenarios. Specifically, we construct a input perturbation evaluation dataset, Noise-LLM, which contains five types of single perturbation and four types of mixed perturbation data. Furthermore, we utilize a multi-level data augmentation method (character, word, and sentence levels) to construct a candidate data pool, and carefully design two ways of automatic task demonstration construction strategies (instance-level and entity-level) with various prompt templates. Our aim is to assess how well various robustness methods of LLMs perform in real-world noisy scenarios. The experiments have demonstrated that the current open-source LLMs generally achieve limited perturbation robustness performance. Based on these experimental observations, we make some forward-looking suggestions to fuel the research in this direction (The code is available at https://github.com/ZhaoJin-xu/A-Unified-Robustness-Evaluation-Framework-for-Noisy-Slot-Filling-Task).},
+	language = {en},
+	booktitle = {Natural {Language} {Processing} and {Chinese} {Computing}},
+	publisher = {Springer Nature Switzerland},
+	author = {Dong, Guanting and Zhao, Jinxu and Hui, Tingfeng and Guo, Daichi and Wang, Wenlong and Feng, Boqi and Qiu, Yueyan and Gongque, Zhuoma and He, Keqing and Wang, Zechen and Xu, Weiran},
+	editor = {Liu, Fei and Duan, Nan and Xu, Qingting and Hong, Yu},
+	year = {2023},
+	keywords = {Input perturbation, Large language models, Robustness evaluation, Slot filling},
+	pages = {682--694},
+	file = {Full Text PDF:C\:\\Users\\ruppr\\Zotero\\storage\\BZ749KWP\\Dong et al. - 2023 - Revisit Input Perturbation Problems for LLMs A Un.pdf:application/pdf},
+}
+
+@misc{mishra_promptaid_2023,
+	title = {{PromptAid}: {Prompt} {Exploration}, {Perturbation}, {Testing} and {Iteration} using {Visual} {Analytics} for {Large} {Language} {Models}},
+	shorttitle = {{PromptAid}},
+	url = {http://arxiv.org/abs/2304.01964},
+	doi = {10.48550/arXiv.2304.01964},
+	abstract = {Large Language Models (LLMs) have gained widespread popularity due to their ability to perform ad-hoc Natural Language Processing (NLP) tasks with a simple natural language prompt. Part of the appeal for LLMs is their approachability to the general public, including individuals with no prior technical experience in NLP techniques. However, natural language prompts can vary significantly in terms of their linguistic structure, context, and other semantics. Modifying one or more of these aspects can result in significant differences in task performance. Non-expert users may find it challenging to identify the changes needed to improve a prompt, especially when they lack domain-specific knowledge and lack appropriate feedback. To address this challenge, we present PromptAid, a visual analytics system designed to interactively create, refine, and test prompts through exploration, perturbation, testing, and iteration. PromptAid uses multiple, coordinated visualizations which allow users to improve prompts by using the three strategies: keyword perturbations, paraphrasing perturbations, and obtaining the best set of in-context few-shot examples. PromptAid was designed through an iterative prototyping process involving NLP experts and was evaluated through quantitative and qualitative assessments for LLMs. Our findings indicate that PromptAid helps users to iterate over prompt template alterations with less cognitive overhead, generate diverse prompts with help of recommendations, and analyze the performance of the generated prompts while surpassing existing state-of-the-art prompting interfaces in performance.},
+	urldate = {2024-05-22},
+	publisher = {arXiv},
+	author = {Mishra, Aditi and Soni, Utkarsh and Arunkumar, Anjana and Huang, Jinbin and Kwon, Bum Chul and Bryan, Chris},
+	month = apr,
+	year = {2023},
+	note = {arXiv:2304.01964 [cs]},
+	keywords = {Computer Science - Human-Computer Interaction},
+	file = {arXiv Fulltext PDF:C\:\\Users\\ruppr\\Zotero\\storage\\2BW86ETB\\Mishra et al. - 2023 - PromptAid Prompt Exploration, Perturbation, Testi.pdf:application/pdf;arXiv.org Snapshot:C\:\\Users\\ruppr\\Zotero\\storage\\FQEI9XNQ\\2304.html:text/html},
+}

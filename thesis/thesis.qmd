@@ -3,13 +3,38 @@ title: "HuBiLa: Human Biases in Large Language Models"
 subtitle: "Investigating Response and Prompt Perturbation Biases in LLMs: A Survey Design Perspective"
 author: "Jens Rupprecht"
 date: today
+execute: 
+  echo: false
 format: 
-    pdf: default
+    pdf: 
+        #documentclass: DESSTemplateUpdate
+        documentclass: scrartcl
+        number-sections: true
+        toc: true
+        toc-title: Contents
+        template-partials: 
+            - before-body.tex
     
 ---
 
-## This is my thesis
-This is some content
+\newpage
+
+# Introduction
+
+# Related Work
+## Human Biases in Survey Methodology
+## Effects of Prompt Perturbations
+
+# Research Design
+## Data and Infrastructure
+## Question Design
+## Prompt Perturbations
+## Evaluation
+
+# Results
+
+# Discussion and Limitations
+# Conclusion
 
 ```{python}
 # this is some code
